@@ -14,12 +14,17 @@ Change the file output to both html and md _documents_ (not notebook).
 1. Load the `gapminder` and `tidyverse` packages. Hint: `suppressPackageStartupMessages()`!
     - This loads `dplyr`, too.
 2. `knit` the document. 
-
+```{r}
+## Load the required libraries
+library(tidyverse)
+library(gapminder)
+```
 ## `select()`
 
 1. Make a data frame containing the columns `year`, `lifeExp`, `country` from the gapminder data, in that order.
 
 ```{r}
+
 select(gapminder, year, lifeExp, country)
 ```
 
@@ -73,9 +78,15 @@ gapminder %>%
 ## `filter()`
 
 1. Only take data with population greater than 100 million.
-
+```{r}
+gapminder %>% 
+  filter(pop > 100e6)
+```
 2. Of those, only take data from Asia.
-
+```{r}
+gapminder %>% 
+  filter(continent=="Asia")
+```
 ## git stuff (Optional)
 
 Knit, commit, push!
@@ -104,9 +115,20 @@ Your task is to use metaprogramming to check whether a response (like the one ab
 # Relational/Comparison and Logical Operators in R
 
 1. Find all entries of Canada and Algeria occuring in the '60s. 
-
+```{r}
+gapminder %>% 
+  filter(country %in% c("Canada", "Algeria"), year >= 1960, year < 1970)
+```
 2. Find all entries of Canada, and entries of Algeria occuring in the '60s. 
+```{r}
+gapminder %>% 
+  filter(country %in% c("Canada") | (country %in% c("Algeria") & year >= 1960 & year < 1970))
+```
 3. Find all entries _not_ including Canada and Algeria.
+```{r}
+gapminder %>% 
+  filter(!(country %in% c("Canada", "Algeria")))
+```
 
 # Bonus Exercises
 

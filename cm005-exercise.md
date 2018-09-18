@@ -19,57 +19,28 @@ Change the file output to both html and md _documents_ (not notebook).
 
 1. Make a data frame containing the columns `year`, `lifeExp`, `country` from the gapminder data, in that order.
 
-```{r}
-select(gapminder, year, lifeExp, country)
-```
-
 2. Select all variables, from `country` to `lifeExp`. 
-
-```{r}
-select(gapminder, country:lifeExp)
-```
 
 3. Select all variables, except `lifeExp`.
 
-```{r}
-a <- select(gapminder, -lifeExp)
-```
 4. Put `continent` first. Hint: use the `everything()` function.
-```{r}
-select(gapminder, continent, everything())
-```
+
 5. Rename `continent` to `cont`.
-```{r}
-rename(gapminder, cont=continent)
-```
 
 ## `arrange()`
 
 1. Order by year.
 
-```{r}
-arrange(gapminder, lifeExp)
-```
 2. Order by year, in descending order.
-```{r}
-arrange(gapminder, desc(year))
-```
+
 3. Order by year, then by life expectancy.
-```{r}
-arrange(gapminder, year, lifeExp)
-```
+
 ## Piping, `%>%`
 
 Note: think of `%>%` as the word "then"!
-```{r}
-arrange(gapminder, lifeExp)
-```
+
 1. Combine `select()` Task 1 with `arrange()` Task 3.
-```{r}
-gapminder %>% 
-  select(year, lifeExp, country) %>% 
-    arrange(year, lifeExp)
-```
+
 ## `filter()`
 
 1. Only take data with population greater than 100 million.

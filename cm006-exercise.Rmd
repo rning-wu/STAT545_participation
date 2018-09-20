@@ -49,7 +49,8 @@ Notice the "metaprogramming" again!
 4. You _must_ remember to put the aesthetic mappings in the `aes` function! What happens if you forget?
 
 ```{r}
-ggplot(gapminder, x=lifeExp, y = gdpPercap) + geom_point()
+## Commented out to allow knit to run
+## ggplot(gapminder, x=lifeExp, y = gdpPercap) + geom_point()
 ```
 
 5. Put the y-axis on a log scale, first by transforming the y variable. 
@@ -228,7 +229,7 @@ ggplot(gapminder, aes(year, lifeExp)) + geom_line()
 4. Use the `group` aesthetic to fix the problem.
 
 ```{r}
-ggplot(gapminder, aes(year, lifeExp)) + geom_line(aes(group=country))
+ggplot(gapminder, aes(year, lifeExp)) + geom_line(aes(group=country), alpha = 0.2)
 ```
 
 
@@ -242,6 +243,9 @@ Let's see how Rwanda's life expectancy and GDP per capita have evolved over time
 
 1. Make a scatterplot. Store it in the variable `c`. 
 
+```{r}
+
+```
 
 
 2. We want to connect the dots from earliest point to latest. What happens if we add the "line" geom to `c`?

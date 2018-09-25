@@ -90,6 +90,11 @@ ggplot(gapminder, aes(lifeExp)) + facet_wrap(~ continent) + geom_histogram()
 
 Remove Oceania. Add another variable: `lifeExp > 60`. 
 
+```{r}
+ggplot(gapminder, aes(gdpPercap)) + 
+  facet_grid(continent ~ lifeExp>60) +
+  geom_histogram() + scale_x_log10()
+```
 
 
 
@@ -100,6 +105,23 @@ Remove Oceania. Add another variable: `lifeExp > 60`.
 - Try adding `scale_radius()` and `scale_size_area()`. What's better?
 - Use `shape=21` to distinguish between `fill` (interior) and `colour` (exterior).
 
+
+```{r}
+gvsl + geom_point(aes(size=pop), alpha = 0.2)
+```
+
+
+```{r}
+gvsl + geom_point(aes(size=pop), alpha = 0.2) + scale_size_area()
+```
+
+
+
+```{r}
+gvsl + geom_point(aes(size=pop, fill=continent), shape = 21, color = 'black', alpha = 0.2)
+```
+
+
 ## "Complete" plot
 
 Let's try plotting much of the data.
@@ -108,6 +130,11 @@ Let's try plotting much of the data.
 - facet by year
 - colour by continent
 
+```{r}
+gvsl + geom_point(aes(size=pop, color = continent)) + 
+  scale_size_area() + 
+  facet_wrap(~ year)
+```
 
 
 # Continue from last time (geom exploration with `x` and `y` aesthetics)
@@ -119,6 +146,13 @@ Let's see how Rwanda's life expectancy and GDP per capita have evolved over time
 - Try `geom_line()`. Try `geom_point()`.
 - Add `arrow=arrow()` option.
 - Add `geom_text`, with year label. 
+```{r}
+gapminder %>% 
+  filter(country == "Rwanda") %>%
+  arrange(year) %>% 
+  ggplot(aes(gdpPercap, lifeExp)) + 
+  geom_point() + geom_path(arrow=arrow())
+```
 
 
 ## Two categorical variables
@@ -129,6 +163,11 @@ Try `cyl` (number of cylinders) ~ `am` (transmission) in the `mtcars` data frame
 - `geom_count()`.
 - `geom_bin2d()`. Compare with `geom_tile()` with `fill` aes.
 
+```{r}
+ggplot(mtcars, aes(factor(cyl), factor(am))) + geom_bin2d()
+```
+
+
 ## Overplotting
 
 Try a scatterplot with:
@@ -138,6 +177,15 @@ Try a scatterplot with:
 - `geom_density2d()`
 - `geom_smooth()`
 
+```{r}
+gvsl + geom_hex()
+gvsl + geom_density2d()
+gvsl + geom_smooth(se = F) + geom_point(alpha = 0.1)
+```
+
+```{r}
+gvsl + geom_point() + coord_polar()
+```
 
 ## Bar plots
 
@@ -145,6 +193,11 @@ How many countries are in each continent? Use the year 2007.
 
 1. After filtering the gapminder data to 2007, make a bar chart of the number of countries in each continent. Store everything except the geom in the variable `d`.
 
+```{r}
+gapminder %>%
+  filter(year==2007) %>% 
+  ggplot(aes(continent)) + geom_bar()
+```
 
 
 2. Notice the y-axis. Oddly, `ggplot2` doesn't make it obvious how to change to proportion. Try adding a `y` aesthetic: `y=..count../sum(..count..)`.
@@ -166,12 +219,44 @@ If you'd like some practice, give these exercises a try
 
 __Exercise 1__: Make a plot of `year` (x) vs `lifeExp` (y), with points coloured by continent. Then, to that same plot, fit a straight regression line to each continent, without the error bars. If you can, try piping the data frame into the `ggplot` function.
 
+```{r}
+gapminder %>% 
+  ggplot(aes(year, lifeExp, color=continent)) + geom_point() + geom_smooth(method='lm', se = FALSE)
+```
+
+
 __Exercise 2__: Repeat Exercise 1, but switch the _regression line_ and _geom\_point_ layers. How is this plot different from that of Exercise 1?
+
+```{r}
+gapminder %>% 
+  ggplot(aes(year, lifeExp, color=continent)) + geom_smooth(method='lm', se = FALSE)  + geom_point()
+```
 
 __Exercise 3__: Omit the `geom_point` layer from either of the above two plots (it doesn't matter which). Does the line still show up, even though the data aren't shown? Why or why not?
 
+```{r}
+gapminder %>% 
+  ggplot(aes(year, lifeExp, color=continent)) + geom_smooth(method='lm', se = FALSE)
+```
+
+
 __Exercise 4__: Make a plot of `year` (x) vs `lifeExp` (y), facetted by continent. Then, fit a smoother through the data for each continent, without the error bars. Choose a span that you feel is appropriate.
+```{r}
+gapminder %>% 
+  ggplot(aes(year, lifeExp)) + 
+  facet_wrap(~ continent) + geom_point() + geom_smooth(se = F)
+```
 
 __Exercise 5__: Plot the population over time (year) using lines, so that each country has its own line. Colour by `gdpPercap`. Add alpha transparency to your liking. 
 
+```{r}
+gapminder %>% 
+  ggplot(aes(year, pop)) + geom_line(aes(group=country, color=gdpPercap), alpha = 0.23) + scale_y_log10()
+```
+
 __Exercise 6__: Add points to the plot in Exercise 5.
+
+```{r}
+gapminder %>% 
+  ggplot(aes(year, pop)) + geom_line(aes(group=country, color=gdpPercap), alpha = 0.23) + geom_point(alpha = 0.1) + scale_y_log10() 
+```

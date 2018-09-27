@@ -104,9 +104,10 @@ Your turn! For each continent, what is the median GDP per capita of countries wi
 
 ```{r}
 gapminder %>%
-  mutate(age = if_eles(lifeExp > 60, 'high', 'low')) %>%
-  group_by(continent, hvsl) %>% 
-  summarize(md = median(gdpPercap))
+  mutate(age = if_else(lifeExp > 60, 'high', 'low')) %>%
+  group_by(continent, age) %>% 
+  summarize(md = median(gdpPercap)) %>% 
+  arrange(md)
 ```
 
 There are special functions to summarize by. Let's see some of them:
@@ -144,7 +145,16 @@ For any generic output, we can use dplyr's `do()` function -- but that's a topic
 Calculate the growth in population since the first year on record _for each country_. `first()` is useful.
 
 ```{r}
+gapminder %>% 
+  group_by(country) %>% 
+  mutate(growth = pop - first(pop))
+```
 
+```{r}
+gapminder %>% 
+  group_by(country) %>% 
+  mutate(change = pop-lag(pop)) %>% 
+  filter(country == 'Germany')
 ```
 
 Notice that `dplyr` has retained the original grouping.
@@ -172,13 +182,18 @@ Your turn: Use what we learned to answer the following questions.
 1. Determine the country that experienced the sharpest 5-year drop in life expectancy, in each continent.
 
 ```{r}
-
+gapminder %>% 
+  group_by(continent, country) %>% 
+  mutate(gain = lifeExp - lag(lifeExp)) %>% 
+  filter(!is.na(gain)) %>% 
+  summarize(min = min(gain)) %>% 
+  summarize(min = min(min)) %>% 
+  arrange(min)
 ```
 
 2. Compute the relative gdp (NOT per capita!) of each country compared to Canada (= GDP of a country / GDP of Canada).
 
 ```{r}
-
 ```
 
 Sanity check: are Canada's numbers = 1? What is the spread of numbers like (should be small)?

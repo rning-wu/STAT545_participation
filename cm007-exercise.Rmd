@@ -148,7 +148,7 @@ Let's see how Rwanda's life expectancy and GDP per capita have evolved over time
 - Add `geom_text`, with year label. 
 ```{r}
 gapminder %>% 
-  filter(country == "Rwanda") %>%
+  filter(country == "Chad") %>%
   arrange(year) %>% 
   ggplot(aes(gdpPercap, lifeExp)) + 
   geom_point() + geom_path(arrow=arrow())

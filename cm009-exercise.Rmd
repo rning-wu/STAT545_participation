@@ -58,7 +58,8 @@ Read these three LOTR csv's, saving them to `lotr1`, `lotr2`, and `lotr3`:
 ```{r}
 lotr1 = read_csv('https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Fellowship_Of_The_Ring.csv');
 lotr2 = read_csv('https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Two_Towers.csv');
-lotr3 = read_csv('https://github.com/jennybc/lotr-tidy/blob/master/data/The_Return_Of_The_King.csv');
+lotr3 = read_csv('https://raw.githubusercontent.com/jennybc/lotr-tidy/master/data/The_Return_Of_The_King.csv');
+
 ```
 
 ## `gather()`
@@ -70,13 +71,14 @@ This function is useful for making untidy data tidy (so that computers can more 
 1. Combine the three LOTR untidy tables (`lotr1`, `lotr2`, `lotr3`) to a single untidy table by stacking them.  
 
 ```{r}
-
+(lotr_untidy = bind_rows(lotr1,lotr2,lotr3))
 ```
 
 2. Convert to tidy. Also try this by specifying columns as a range, and with the `contains()` function.
 
 ```{r}
-
+gather(lotr_untidy, key='Gender', value='Word', Female, Male)
+gather(lotr_untidy, key='Gender', value='Word', Female:Male)
 ```
 
 3. Try again (bind and tidy the three untidy data frames), but without knowing how many tables there are originally. 

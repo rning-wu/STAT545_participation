@@ -114,7 +114,7 @@ left_join(flights2, weather, by=c('year', 'time_hour'))
 ### 5. Add `weather` information to the `flights2` dataset by matching only "time_hour" variable
 
 ```{r}
-left_join(flights, weather, by='time_hour')
+left_join(flights2, weather, by='time_hour')
 ```
 
 
@@ -125,14 +125,23 @@ left_join(flights, weather, by='time_hour')
 
 ### example for `semi_join`: All rows in `a` that have a match in `b`
 
+```{r}
+semi_join(a, b)
+```
 
 
 ### example for `anti_join`: All rows in `a` that do not have a match in `b`
 
+```{r}
+anti_join(a,b)
+```
 
 
 ### example of joinin by matching two variables (e.g., "x1", "x2") from both datasets `a` and `c`
 
+```{r}
+semi_join(a,c)
+```
 
 
 ## Types of Set Operations for two datasets
@@ -148,21 +157,30 @@ left_join(flights, weather, by='time_hour')
 
 ### example for `intersect`: Rows that appear in both `y` and `z`
 
+```{r}
+intersect(y,z)
+```
 
 
 ### example for `union`: Rows that appear in either or both `y` and `z`
 
-
+```{r}
+union(y,z)
+```
 
 ### example for `setdiff`: Rows that appear in `y` but not `z`. __Caution:__ `setdiff` for `y` to `z` and `z` to `y` are different.
 
+```{r}
+setdiff(y,z)
+```
 
 
 ### what happen if colnames are differentin `y` and `x`? Is there any error message and why?
 
 ```{r}
 (x <- tibble(x1 = c("B", "C", "D"), x3 = 2:4))
-
+# intersect(y,x) 
+# Error - not compatible
 ```
 
 ## Types of binding datasets
@@ -171,13 +189,24 @@ left_join(flights, weather, by='time_hour')
 
 ### example for `bind_rows`: Append `z` to `y` as new rows
 
+```{r}
+bind_rows(y, z)
+```
 
 
 ### example for `bind_cols`: Append `z` to `y` as new columns. __Caution__: matches rows by position. Check colnames after binding.
 
+```{r}
+bind_cols(y, z)
+```
+
 
 ### what happen if colnames are different between `y` and `x` datasets?
 
+
+```{r}
+bind_cols(y, x)
+```
 
 ##Practice Exercises
 Practice these concepts in the following exercises. It might help you to first identify the type of function you are applying.
@@ -188,6 +217,7 @@ Practice these concepts in the following exercises. It might help you to first i
 
 
 ### 2. Can we apply `set` and `binding` funcions between `flights2` and `weather` datasets. Why and why not?
+
 
 
 ### 3. Let's create a tibble `p` with "x1" and "x2" coulmns and have duplicated element in "x1" column. Create another tibble `q` with "x1" and "x3" columns. Then apply `left_join` function `p` to `q` and `q` to `p`. 

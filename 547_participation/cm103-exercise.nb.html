@@ -1211,114 +1211,262 @@ names(got_chars[[1]])</code></pre>
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWFwKGdvdF9jaGFycywgZGVzaXJlZF9pbmZvKVxuXG5gYGAifQ== -->
-<pre class="r"><code>map(got_chars, desired_info)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubWFwKGdvdF9jaGFycywgYFtgLCBkZXNpcmVkX2luZm8pXG5cbmBgYCJ9 -->
+<pre class="r"><code>map(got_chars, `[`, desired_info)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cbk5VTExcblxuW1syXV1cbk5VTExcblxuW1szXV1cbk5VTExcblxuW1s0XV1cbk5VTExcblxuW1s1XV1cbk5VTExcblxuW1s2XV1cbk5VTExcblxuW1s3XV1cbk5VTExcblxuW1s4XV1cbk5VTExcblxuW1s5XV1cbk5VTExcblxuW1sxMF1dXG5OVUxMXG5cbltbMTFdXVxuTlVMTFxuXG5bWzEyXV1cbk5VTExcblxuW1sxM11dXG5OVUxMXG5cbltbMTRdXVxuTlVMTFxuXG5bWzE1XV1cbk5VTExcblxuW1sxNl1dXG5OVUxMXG5cbltbMTddXVxuTlVMTFxuXG5bWzE4XV1cbk5VTExcblxuW1sxOV1dXG5OVUxMXG5cbltbMjBdXVxuTlVMTFxuXG5bWzIxXV1cbk5VTExcblxuW1syMl1dXG5OVUxMXG5cbltbMjNdXVxuTlVMTFxuXG5bWzI0XV1cbk5VTExcblxuW1syNV1dXG5OVUxMXG5cbltbMjZdXVxuTlVMTFxuXG5bWzI3XV1cbk5VTExcblxuW1syOF1dXG5OVUxMXG5cbltbMjldXVxuTlVMTFxuXG5bWzMwXV1cbk5VTExcbiJ9 -->
+<!-- rnb-output-begin eyJkYXRhIjoiW1sxXV1cbltbMV1dJG5hbWVcblsxXSBcIlRoZW9uIEdyZXlqb3lcIlxuXG5bWzFdXSRib3JuXG5bMV0gXCJJbiAyNzggQUMgb3IgMjc5IEFDLCBhdCBQeWtlXCJcblxuXG5bWzJdXVxuW1syXV0kbmFtZVxuWzFdIFwiVHlyaW9uIExhbm5pc3RlclwiXG5cbltbMl1dJGJvcm5cblsxXSBcIkluIDI3MyBBQywgYXQgQ2FzdGVybHkgUm9ja1wiXG5cblxuW1szXV1cbltbM11dJG5hbWVcblsxXSBcIlZpY3RhcmlvbiBHcmV5am95XCJcblxuW1szXV0kYm9yblxuWzFdIFwiSW4gMjY4IEFDIG9yIGJlZm9yZSwgYXQgUHlrZVwiXG5cblxuW1s0XV1cbltbNF1dJG5hbWVcblsxXSBcIldpbGxcIlxuXG5bWzRdXSRib3JuXG5bMV0gXCJcIlxuXG5cbltbNV1dXG5bWzVdXSRuYW1lXG5bMV0gXCJBcmVvIEhvdGFoXCJcblxuW1s1XV0kYm9yblxuWzFdIFwiSW4gMjU3IEFDIG9yIGJlZm9yZSwgYXQgTm9ydm9zXCJcblxuXG5bWzZdXVxuW1s2XV0kbmFtZVxuWzFdIFwiQ2hldHRcIlxuXG5bWzZdXSRib3JuXG5bMV0gXCJBdCBIYWcncyBNaXJlXCJcblxuXG5bWzddXVxuW1s3XV0kbmFtZVxuWzFdIFwiQ3Jlc3NlblwiXG5cbltbN11dJGJvcm5cblsxXSBcIkluIDIxOSBBQyBvciAyMjAgQUNcIlxuXG5cbltbOF1dXG5bWzhdXSRuYW1lXG5bMV0gXCJBcmlhbm5lIE1hcnRlbGxcIlxuXG5bWzhdXSRib3JuXG5bMV0gXCJJbiAyNzYgQUMsIGF0IFN1bnNwZWFyXCJcblxuXG5bWzldXVxuW1s5XV0kbmFtZVxuWzFdIFwiRGFlbmVyeXMgVGFyZ2FyeWVuXCJcblxuW1s5XV0kYm9yblxuWzFdIFwiSW4gMjg0IEFDLCBhdCBEcmFnb25zdG9uZVwiXG5cblxuW1sxMF1dXG5bWzEwXV0kbmFtZVxuWzFdIFwiRGF2b3MgU2Vhd29ydGhcIlxuXG5bWzEwXV0kYm9yblxuWzFdIFwiSW4gMjYwIEFDIG9yIGJlZm9yZSwgYXQgS2luZydzIExhbmRpbmdcIlxuXG5cbltbMTFdXVxuW1sxMV1dJG5hbWVcblsxXSBcIkFyeWEgU3RhcmtcIlxuXG5bWzExXV0kYm9yblxuWzFdIFwiSW4gMjg5IEFDLCBhdCBXaW50ZXJmZWxsXCJcblxuXG5bWzEyXV1cbltbMTJdXSRuYW1lXG5bMV0gXCJBcnlzIE9ha2hlYXJ0XCJcblxuW1sxMl1dJGJvcm5cblsxXSBcIkF0IE9sZCBPYWtcIlxuXG5cbltbMTNdXVxuW1sxM11dJG5hbWVcblsxXSBcIkFzaGEgR3JleWpveVwiXG5cbltbMTNdXSRib3JuXG5bMV0gXCJJbiAyNzUgQUMgb3IgMjc2IEFDLCBhdCBQeWtlXCJcblxuXG5bWzE0XV1cbltbMTRdXSRuYW1lXG5bMV0gXCJCYXJyaXN0YW4gU2VsbXlcIlxuXG5bWzE0XV0kYm9yblxuWzFdIFwiSW4gMjM3IEFDXCJcblxuXG5bWzE1XV1cbltbMTVdXSRuYW1lXG5bMV0gXCJWYXJhbXlyXCJcblxuW1sxNV1dJGJvcm5cblsxXSBcIkF0IGEgdmlsbGFnZSBCZXlvbmQgdGhlIFdhbGxcIlxuXG5cbltbMTZdXVxuW1sxNl1dJG5hbWVcblsxXSBcIkJyYW5kb24gU3RhcmtcIlxuXG5bWzE2XV0kYm9yblxuWzFdIFwiSW4gMjkwIEFDLCBhdCBXaW50ZXJmZWxsXCJcblxuXG5bWzE3XV1cbltbMTddXSRuYW1lXG5bMV0gXCJCcmllbm5lIG9mIFRhcnRoXCJcblxuW1sxN11dJGJvcm5cblsxXSBcIkluIDI4MCBBQ1wiXG5cblxuW1sxOF1dXG5bWzE4XV0kbmFtZVxuWzFdIFwiQ2F0ZWx5biBTdGFya1wiXG5cbltbMThdXSRib3JuXG5bMV0gXCJJbiAyNjQgQUMsIGF0IFJpdmVycnVuXCJcblxuXG5bWzE5XV1cbltbMTldXSRuYW1lXG5bMV0gXCJDZXJzZWkgTGFubmlzdGVyXCJcblxuW1sxOV1dJGJvcm5cblsxXSBcIkluIDI2NiBBQywgYXQgQ2FzdGVybHkgUm9ja1wiXG5cblxuW1syMF1dXG5bWzIwXV0kbmFtZVxuWzFdIFwiRWRkYXJkIFN0YXJrXCJcblxuW1syMF1dJGJvcm5cblsxXSBcIkluIDI2MyBBQywgYXQgV2ludGVyZmVsbFwiXG5cblxuW1syMV1dXG5bWzIxXV0kbmFtZVxuWzFdIFwiSmFpbWUgTGFubmlzdGVyXCJcblxuW1syMV1dJGJvcm5cblsxXSBcIkluIDI2NiBBQywgYXQgQ2FzdGVybHkgUm9ja1wiXG5cblxuW1syMl1dXG5bWzIyXV0kbmFtZVxuWzFdIFwiSm9uIENvbm5pbmd0b25cIlxuXG5bWzIyXV0kYm9yblxuWzFdIFwiSW4gb3IgYmV0d2VlbiAyNjMgQUMgYW5kIDI2NSBBQ1wiXG5cblxuW1syM11dXG5bWzIzXV0kbmFtZVxuWzFdIFwiSm9uIFNub3dcIlxuXG5bWzIzXV0kYm9yblxuWzFdIFwiSW4gMjgzIEFDXCJcblxuXG5bWzI0XV1cbltbMjRdXSRuYW1lXG5bMV0gXCJBZXJvbiBHcmV5am95XCJcblxuW1syNF1dJGJvcm5cblsxXSBcIkluIG9yIGJldHdlZW4gMjY5IEFDIGFuZCAyNzMgQUMsIGF0IFB5a2VcIlxuXG5cbltbMjVdXVxuW1syNV1dJG5hbWVcblsxXSBcIktldmFuIExhbm5pc3RlclwiXG5cbltbMjVdXSRib3JuXG5bMV0gXCJJbiAyNDQgQUNcIlxuXG5cbltbMjZdXVxuW1syNl1dJG5hbWVcblsxXSBcIk1lbGlzYW5kcmVcIlxuXG5bWzI2XV0kYm9yblxuWzFdIFwiQXQgVW5rbm93blwiXG5cblxuW1syN11dXG5bWzI3XV0kbmFtZVxuWzFdIFwiTWVycmV0dCBGcmV5XCJcblxuW1syN11dJGJvcm5cblsxXSBcIkluIDI2MiBBQ1wiXG5cblxuW1syOF1dXG5bWzI4XV0kbmFtZVxuWzFdIFwiUXVlbnR5biBNYXJ0ZWxsXCJcblxuW1syOF1dJGJvcm5cblsxXSBcIkluIDI4MSBBQywgYXQgU3Vuc3BlYXIsIERvcm5lXCJcblxuXG5bWzI5XV1cbltbMjldXSRuYW1lXG5bMV0gXCJTYW13ZWxsIFRhcmx5XCJcblxuW1syOV1dJGJvcm5cblsxXSBcIkluIDI4MyBBQywgYXQgSG9ybiBIaWxsXCJcblxuXG5bWzMwXV1cbltbMzBdXSRuYW1lXG5bMV0gXCJTYW5zYSBTdGFya1wiXG5cbltbMzBdXSRib3JuXG5bMV0gXCJJbiAyODYgQUMsIGF0IFdpbnRlcmZlbGxcIlxuIn0= -->
 <pre><code>[[1]]
-NULL
+[[1]]$name
+[1] &quot;Theon Greyjoy&quot;
+
+[[1]]$born
+[1] &quot;In 278 AC or 279 AC, at Pyke&quot;
+
 
 [[2]]
-NULL
+[[2]]$name
+[1] &quot;Tyrion Lannister&quot;
+
+[[2]]$born
+[1] &quot;In 273 AC, at Casterly Rock&quot;
+
 
 [[3]]
-NULL
+[[3]]$name
+[1] &quot;Victarion Greyjoy&quot;
+
+[[3]]$born
+[1] &quot;In 268 AC or before, at Pyke&quot;
+
 
 [[4]]
-NULL
+[[4]]$name
+[1] &quot;Will&quot;
+
+[[4]]$born
+[1] &quot;&quot;
+
 
 [[5]]
-NULL
+[[5]]$name
+[1] &quot;Areo Hotah&quot;
+
+[[5]]$born
+[1] &quot;In 257 AC or before, at Norvos&quot;
+
 
 [[6]]
-NULL
+[[6]]$name
+[1] &quot;Chett&quot;
+
+[[6]]$born
+[1] &quot;At Hag's Mire&quot;
+
 
 [[7]]
-NULL
+[[7]]$name
+[1] &quot;Cressen&quot;
+
+[[7]]$born
+[1] &quot;In 219 AC or 220 AC&quot;
+
 
 [[8]]
-NULL
+[[8]]$name
+[1] &quot;Arianne Martell&quot;
+
+[[8]]$born
+[1] &quot;In 276 AC, at Sunspear&quot;
+
 
 [[9]]
-NULL
+[[9]]$name
+[1] &quot;Daenerys Targaryen&quot;
+
+[[9]]$born
+[1] &quot;In 284 AC, at Dragonstone&quot;
+
 
 [[10]]
-NULL
+[[10]]$name
+[1] &quot;Davos Seaworth&quot;
+
+[[10]]$born
+[1] &quot;In 260 AC or before, at King's Landing&quot;
+
 
 [[11]]
-NULL
+[[11]]$name
+[1] &quot;Arya Stark&quot;
+
+[[11]]$born
+[1] &quot;In 289 AC, at Winterfell&quot;
+
 
 [[12]]
-NULL
+[[12]]$name
+[1] &quot;Arys Oakheart&quot;
+
+[[12]]$born
+[1] &quot;At Old Oak&quot;
+
 
 [[13]]
-NULL
+[[13]]$name
+[1] &quot;Asha Greyjoy&quot;
+
+[[13]]$born
+[1] &quot;In 275 AC or 276 AC, at Pyke&quot;
+
 
 [[14]]
-NULL
+[[14]]$name
+[1] &quot;Barristan Selmy&quot;
+
+[[14]]$born
+[1] &quot;In 237 AC&quot;
+
 
 [[15]]
-NULL
+[[15]]$name
+[1] &quot;Varamyr&quot;
+
+[[15]]$born
+[1] &quot;At a village Beyond the Wall&quot;
+
 
 [[16]]
-NULL
+[[16]]$name
+[1] &quot;Brandon Stark&quot;
+
+[[16]]$born
+[1] &quot;In 290 AC, at Winterfell&quot;
+
 
 [[17]]
-NULL
+[[17]]$name
+[1] &quot;Brienne of Tarth&quot;
+
+[[17]]$born
+[1] &quot;In 280 AC&quot;
+
 
 [[18]]
-NULL
+[[18]]$name
+[1] &quot;Catelyn Stark&quot;
+
+[[18]]$born
+[1] &quot;In 264 AC, at Riverrun&quot;
+
 
 [[19]]
-NULL
+[[19]]$name
+[1] &quot;Cersei Lannister&quot;
+
+[[19]]$born
+[1] &quot;In 266 AC, at Casterly Rock&quot;
+
 
 [[20]]
-NULL
+[[20]]$name
+[1] &quot;Eddard Stark&quot;
+
+[[20]]$born
+[1] &quot;In 263 AC, at Winterfell&quot;
+
 
 [[21]]
-NULL
+[[21]]$name
+[1] &quot;Jaime Lannister&quot;
+
+[[21]]$born
+[1] &quot;In 266 AC, at Casterly Rock&quot;
+
 
 [[22]]
-NULL
+[[22]]$name
+[1] &quot;Jon Connington&quot;
+
+[[22]]$born
+[1] &quot;In or between 263 AC and 265 AC&quot;
+
 
 [[23]]
-NULL
+[[23]]$name
+[1] &quot;Jon Snow&quot;
+
+[[23]]$born
+[1] &quot;In 283 AC&quot;
+
 
 [[24]]
-NULL
+[[24]]$name
+[1] &quot;Aeron Greyjoy&quot;
+
+[[24]]$born
+[1] &quot;In or between 269 AC and 273 AC, at Pyke&quot;
+
 
 [[25]]
-NULL
+[[25]]$name
+[1] &quot;Kevan Lannister&quot;
+
+[[25]]$born
+[1] &quot;In 244 AC&quot;
+
 
 [[26]]
-NULL
+[[26]]$name
+[1] &quot;Melisandre&quot;
+
+[[26]]$born
+[1] &quot;At Unknown&quot;
+
 
 [[27]]
-NULL
+[[27]]$name
+[1] &quot;Merrett Frey&quot;
+
+[[27]]$born
+[1] &quot;In 262 AC&quot;
+
 
 [[28]]
-NULL
+[[28]]$name
+[1] &quot;Quentyn Martell&quot;
+
+[[28]]$born
+[1] &quot;In 281 AC, at Sunspear, Dorne&quot;
+
 
 [[29]]
-NULL
+[[29]]$name
+[1] &quot;Samwell Tarly&quot;
+
+[[29]]$born
+[1] &quot;In 283 AC, at Horn Hill&quot;
+
 
 [[30]]
-NULL</code></pre>
+[[30]]$name
+[1] &quot;Sansa Stark&quot;
+
+[[30]]$born
+[1] &quot;In 286 AC, at Winterfell&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Note: as Jenny says, it’s always safer (from a programming perspective) to work with output that’s more predictable. The following would be safer, and is still readable:</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZ290X2NoYXJzICU+JSB7XG4gICAgdGliYmxlKFxuICAgICAgICBuYW1lID0gbWFwX2NociguLCBcIm5hbWVcIiksXG4gICAgICAgIGJvcm4gPSBtYXBfY2hyKC4sIFwiYm9yblwiKVxuICAgIClcbn1cbmBgYCJ9 -->
-<pre class="r"><code>got_chars %&gt;% {
-    tibble(
-        name = map_chr(., &quot;name&quot;),
-        born = map_chr(., &quot;born&quot;)
-    )
-}</code></pre>
-<!-- rnb-source-end -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MzB9LCJyZGYiOiJINHNJQUFBQUFBQUFBNDFWWFZmVFFCQU5MUldwbEtLYzQ4Y1JjWi9VQitCQUM2Rjk3SWVLS0tJVWdkZWhHZHJZZEplejJWTHo1bS8xaDRDellUZHRVL0RZMHlhYm1Uc3pkKzdzTmtmTnMxTCtMTzg0VHNiSlpySU9mUjFuTmtPWEdXZldtZGYzWDQ2VFhZNEJqck5FdjFYaktCeDNVWEQyVVdMMFUwVEd1SFFjU1orc1g0QnpQMVFvamYzeGlkOVdFTHNtQTJaUC9TQXc2M3hOb21CN1FrSFhXSEtOTGlwbEh1WWFFc01RdVhrczFxUlBWWkFkZ0ZTWUpIblNCT1FvbzVBZGcreUFqSktBeFNaY2laQzFFSVpDcXU2b2FBU3NSZVI2dHJHYWpqNkVYaGNwc3pFdTFNSXVwTGdYNnlBbGRRbWNrZ1o5YTU0N0FRbjl5TFplcUV2Z0hqVStYbU9wTG4zVTVNV0Y1cG13S1RTQWVvbFM0QWJLRVAwcFVSZmVleDVJYndKYjNBZS9qMVBReFgwaTBCQms1QjBsckNJUHRiWEZ4VERwSE9YVWhJcWY4UXFtSjVvL3dNQVBxVE9KbHM0QlNrbmpZaDhvM2daL0h5QlgxTS9ra0FvdDZBL3BVZmNlV095akZ2RFFqbUp5cjYxODRxeTBXMkcxQmhPU1ZsVmFyVEZRN0Z2VXMrVmZ4cGl5OVRSQWt3MGlkaVRhdmZFMHJrMXpqaGRDWWpxTlkrNnJHcnV6TzQzOUtpUnRvMFF4eGZhZzh6WmtCMzRpeExJTzNhcGF0cVZOV2huWDA1aWthMG0yQmp5OHBGMW12QyswdDdKdHZVMEpIY0ZEbXBmTi9DWnVZSE9hMUdlYUs1R2dJWG0wTXVqbmNicEVxMU9ma3lJWE9IYmVGRHNNUEwzVkozVGVTWFIyNzlCNVhtUEt1Nk9lVmlnTnNDczZ4OUJCVnNkSWNJK3BMckpUU0VyRlZLcWI5MUtKazFiU1FybUpGRWYrRlcydUFSK2Z0ZXYrYTlaeFJiZDhiOFgvU1BHYUlMSE1hb2hvc3pHU21KWTdJNnEzM01zanc3dDBYRFdKRyszUHRLTGIyNk1FZWpBL2VJOE9KaCtIdUtVUjVGVmNkQ3U5a2RaWVU4aGt1enhMbU1XZ1BYS3hQWDl5S0JYM0Rva21Yd0c1ZGdCaGFJNmtOZVk5VUxCeFFmOTBtSVp6c2xsNHh2N1BhNk5kbnhPUlZOQzhGTU1ORzFqUWdiL3Bjbk56ODRkdTF5bnduTGhVOUNvaGFFYS9tWElwYWpNeVpTZ091RTd0cmJlN0E5NWJMMnY2c2Z2MlV6RHIxYkYxNXJaazlzYWt5cGxVRDVCMy9FVGdYQURuYU9WY3BCYmlEall1SlVscGRTSnJ1S0hvcFpZY3U3WUlyQ1h1emJuK0N3TDhocUNIQndBQSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["born"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"Theon Greyjoy","2":"In 278 AC or 279 AC, at Pyke"},{"1":"Tyrion Lannister","2":"In 273 AC, at Casterly Rock"},{"1":"Victarion Greyjoy","2":"In 268 AC or before, at Pyke"},{"1":"Will","2":""},{"1":"Areo Hotah","2":"In 257 AC or before, at Norvos"},{"1":"Chett","2":"At Hag's Mire"},{"1":"Cressen","2":"In 219 AC or 220 AC"},{"1":"Arianne Martell","2":"In 276 AC, at Sunspear"},{"1":"Daenerys Targaryen","2":"In 284 AC, at Dragonstone"},{"1":"Davos Seaworth","2":"In 260 AC or before, at King's Landing"},{"1":"Arya Stark","2":"In 289 AC, at Winterfell"},{"1":"Arys Oakheart","2":"At Old Oak"},{"1":"Asha Greyjoy","2":"In 275 AC or 276 AC, at Pyke"},{"1":"Barristan Selmy","2":"In 237 AC"},{"1":"Varamyr","2":"At a village Beyond the Wall"},{"1":"Brandon Stark","2":"In 290 AC, at Winterfell"},{"1":"Brienne of Tarth","2":"In 280 AC"},{"1":"Catelyn Stark","2":"In 264 AC, at Riverrun"},{"1":"Cersei Lannister","2":"In 266 AC, at Casterly Rock"},{"1":"Eddard Stark","2":"In 263 AC, at Winterfell"},{"1":"Jaime Lannister","2":"In 266 AC, at Casterly Rock"},{"1":"Jon Connington","2":"In or between 263 AC and 265 AC"},{"1":"Jon Snow","2":"In 283 AC"},{"1":"Aeron Greyjoy","2":"In or between 269 AC and 273 AC, at Pyke"},{"1":"Kevan Lannister","2":"In 244 AC"},{"1":"Melisandre","2":"At Unknown"},{"1":"Merrett Frey","2":"In 262 AC"},{"1":"Quentyn Martell","2":"In 281 AC, at Sunspear, Dorne"},{"1":"Samwell Tarly","2":"In 283 AC, at Horn Hill"},{"1":"Sansa Stark","2":"In 286 AC, at Winterfell"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[30]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <p>Note the curly braces “tricks” the object prior to the pipe from entering as the first argument to <code>tibble</code>, because <code>``{``</code> only returns the last line evaluated. In this case there are two: the above code is equivalent to</p>
